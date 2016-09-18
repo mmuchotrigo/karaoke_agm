@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @local.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @local.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @local.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @local.email %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @local.about %>
+</p>
+
+<p>
+  <strong>Manager:</strong>
+  <%= @local.manager %>
+</p>
+
+</body>
+</html>
+<%= link_to 'Edit', edit_local_path(@local) %> |
+<%= link_to 'Salas', local_salas_path(@local) %> |
+<%= link_to 'Back', locals_path %>

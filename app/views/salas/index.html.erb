@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Salas in <%= @local.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>About</th>
+      <th>Local</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salas.each do |sala| %>
+      <tr>
+        <td><%= sala.name %></td>
+        <td><%= sala.capacity %></td>
+        <td><%= sala.about %></td>
+        <td><%= sala.local.name %></td>
+        <td><%= link_to 'Show', local_sala_path(@local, sala) %></td>
+        <td><%= link_to 'Edit', edit_local_sala_path(@local, sala) %></td>
+        <td><%= link_to 'Destroy', local_sala_path(@local, sala), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sala', new_local_sala_path %>

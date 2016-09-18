@@ -1,0 +1,36 @@
+<%= form_for([@local, @sala]) do |f| %>
+  <% if @sala.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sala.errors.count, "error") %> prohibited this sala from being saved:</h2>
+
+      <ul>
+      <% @sala.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= @local.name %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br>
+    <%= f.number_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :about %><br>
+    <%= f.text_field :about %>
+  </div>
+  <div class="field">
+    <%= f.label :local_id %><br>
+    <%= f.text_field :local_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
