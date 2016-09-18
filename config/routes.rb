@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/services'
+
+  get 'pages/reservation'
+
+  get 'pages/contact_us'
+
+  get 'pages/register'
+
   resources :productos
   resources :productos
   resources :productos
@@ -6,7 +16,7 @@ Rails.application.routes.draw do
     resources :salas  
 end
 
-  root 'locals#index'
+  root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
