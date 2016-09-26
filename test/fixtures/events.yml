@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date_time: 2016-09-26 23:18:57
+  capacity: 1
+  about: MyString
+  locals_id: 
+
+two:
+  name: MyString
+  date_time: 2016-09-26 23:18:57
+  capacity: 1
+  about: MyString
+  locals_id: 

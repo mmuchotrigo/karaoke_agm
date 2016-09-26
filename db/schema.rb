@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924032017) do
+ActiveRecord::Schema.define(version: 20160926232940) do
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "name"
+    t.date     "birthday"
+    t.string   "email"
+    t.string   "telephone"
+    t.string   "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date_time"
+    t.integer  "capacity"
+    t.string   "about"
+    t.integer  "locals_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "events", ["locals_id"], name: "index_events_on_locals_id"
 
   create_table "locals", force: :cascade do |t|
     t.string   "name"
@@ -45,6 +67,18 @@ ActiveRecord::Schema.define(version: 20160924032017) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "salas_id"
+    t.integer  "clients_id"
+    t.datetime "date_time"
+    t.string   "about"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reservations", ["clients_id"], name: "index_reservations_on_clients_id"
+  add_index "reservations", ["salas_id"], name: "index_reservations_on_salas_id"
 
   create_table "salas", force: :cascade do |t|
     t.string   "name"

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :reservations
+  resources :clients
+  resources :events
   resources :profiles, only: [:edit, :update]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
