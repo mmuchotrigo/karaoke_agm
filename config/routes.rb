@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :productos
+  resources :productos
+  #resources :products
+  resources :categories
   resources :reservations
   resources :clients
   resources :events

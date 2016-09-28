@@ -16,7 +16,7 @@
 class Local < ActiveRecord::Base
     has_many :salas, dependent: :destroy
     
-    validates :name, presence: true
+    validates :name, :address, :phone, :email, :about, :manager, presence: true
     #validates :email, email_format: { message: "Incorrecto formato de email." }
     #validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 end

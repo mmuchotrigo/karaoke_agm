@@ -1,14 +1,14 @@
-<%= simple_form_for(@reservation) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @reservation, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :salas_id %>
+  <%= error_span(@reservation[:salas_id]) %>
+  <%= f.input :clients_id %>
+  <%= error_span(@reservation[:clients_id]) %>
+  <%= f.input :date_time %>
+  <%= error_span(@reservation[:date_time]) %>
+  <%= f.input :about %>
+  <%= error_span(@reservation[:about]) %>
 
-  <div class="form-inputs">
-    <%= f.association :salas %>
-    <%= f.association :clients %>
-    <%= f.input :date_time %>
-    <%= f.input :about %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                reservations_path, :class => 'btn btn-default' %>
 <% end %>

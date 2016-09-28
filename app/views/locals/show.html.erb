@@ -1,37 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Local -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @local.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @local.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @local.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @local.phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @local.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:about) %>:</strong></dt>
+  <dd><%= @local.about %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:manager) %>:</strong></dt>
+  <dd><%= @local.manager %></dd>
+</dl>
 
-<p>
-  <strong>Address:</strong>
-  <%= @local.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @local.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @local.email %>
-</p>
-
-<p>
-  <strong>About:</strong>
-  <%= @local.about %>
-</p>
-
-<p>
-  <strong>Manager:</strong>
-  <%= @local.manager %>
-</p>
-
-</body>
-</html>
-<%= link_to 'Edit', edit_local_path(@local) %> |
-<%= link_to 'Salas', local_salas_path(@local) %> |
-<%= link_to 'Back', locals_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              locals_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_local_path(@local), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              local_path(@local),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
