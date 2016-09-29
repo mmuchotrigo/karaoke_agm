@@ -1,6 +1,6 @@
 body {
-  background-color: #fff;
-  color: #555;
+  background-color: #FFF;
+  color: #16264c;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -26,13 +26,14 @@ a {
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #264eab;
+    background-color: #264eab;
   }
 }
 
 div {
   &.field, &.actions {
+    background-color: #264eab;
     margin-bottom: 10px;
   }
 }

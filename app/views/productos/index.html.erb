@@ -1,30 +1,24 @@
 <%- model_class = Producto -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Listado de Productos</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:price) %></th>
-      <th><%= model_class.human_attribute_name(:available) %></th>
-      <th><%= model_class.human_attribute_name(:category_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Nombre</th>
+      <th>Categoría</th>
+      <th>Precio (S/.)</th>
+      <th>Disponibilidad</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @productos.each do |producto| %>
       <tr>
-        <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= producto.type %></td>
-        <td><%= producto.name %></td>
+        <td><%= producto.name %></td>        
+        <td><%= producto.category_id %></td>
         <td><%= producto.price %></td>
         <td><%= producto.available %></td>
-        <td><%= producto.category_id %></td>
-        <td><%=l producto.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_producto_path(producto), :class => 'btn btn-default btn-xs' %>

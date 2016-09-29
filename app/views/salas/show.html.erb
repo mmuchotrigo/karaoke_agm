@@ -15,9 +15,9 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              salas_path, :class => 'btn btn-default'  %>
+              local_salas_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_sala_path(@sala), :class => 'btn btn-default' %>
+              edit_locals_salas_path(@local, @sala), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               sala_path(@sala),
               :method => 'delete',

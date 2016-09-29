@@ -13,5 +13,5 @@
 #
 
 class Event < ActiveRecord::Base
-  belongs_to :locals
+  belongs_to :salas
 end
