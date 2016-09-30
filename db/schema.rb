@@ -35,12 +35,9 @@ ActiveRecord::Schema.define(version: 20160928004455) do
     t.datetime "date_time"
     t.integer  "capacity"
     t.string   "about"
-    t.integer  "locals_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "events", ["locals_id"], name: "index_events_on_locals_id"
 
   create_table "locals", force: :cascade do |t|
     t.string   "name"

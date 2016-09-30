@@ -1,16 +1,14 @@
 <%- model_class = Reservation -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Reservaciones</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:salas_id) %></th>
-      <th><%= model_class.human_attribute_name(:clients_id) %></th>
-      <th><%= model_class.human_attribute_name(:date_time) %></th>
-      <th><%= model_class.human_attribute_name(:about) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Sala</th>
+      <th>Cliente</th>
+      <th>Fecha y Hora</th>
+      <th>Descripción</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>

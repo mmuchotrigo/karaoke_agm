@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_sala
 
   # GET /events
   # GET /events.json
@@ -66,10 +65,6 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
-    end
-    
-    def set_sala
-      @sala = Sala.find(params[:sala_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

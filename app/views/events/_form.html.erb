@@ -7,8 +7,6 @@
   <%= error_span(@event[:capacity]) %>
   <%= f.input :about %>
   <%= error_span(@event[:about]) %>
-  <%= f.input :locals_id %>
-  <%= error_span(@event[:locals_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
