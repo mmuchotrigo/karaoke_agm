@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  
+  #before_action :set_local
 
   # GET /events
   # GET /events.json
@@ -54,11 +56,8 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      @event.destroy
+      respond_with(@local)
   end
 
   private
@@ -66,6 +65,10 @@ class EventsController < ApplicationController
     def set_event
       @event = Event.find(params[:id])
     end
+    
+    # def set_local
+    #   @local = Local.find(params[:local_id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params

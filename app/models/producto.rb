@@ -14,4 +14,12 @@
 
 class Producto < ActiveRecord::Base
   belongs_to :category
+  
+    def category_name    
+    self.category.name  
+    end
+    
+    validates :name, presence: true, 
+                   uniqueness: {case_sensitive: false} 
+    validates :category, presence: true
 end

@@ -12,4 +12,7 @@
 class Category < ActiveRecord::Base
     
     has_many :productos
+    
+    validates :name, presence: true, 
+                uniqueness: {case_sensitive: false}
 end

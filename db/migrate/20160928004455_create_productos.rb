@@ -3,7 +3,7 @@ class CreateProductos < ActiveRecord::Migration
     create_table :productos do |t|
       t.string :type
       t.string :name
-      t.integer :price
+      t.decimal :price
       t.boolean :available
       t.references :category, index: true, foreign_key: true
 

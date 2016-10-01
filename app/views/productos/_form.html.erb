@@ -1,14 +1,12 @@
 <%= simple_form_for @producto, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :type %>
-  <%= error_span(@producto[:type]) %>
   <%= f.input :name %>
   <%= error_span(@producto[:name]) %>
   <%= f.input :price %>
   <%= error_span(@producto[:price]) %>
   <%= f.input :available %>
   <%= error_span(@producto[:available]) %>
-  <%= f.input :category_id %>
-  <%= error_span(@producto[:category_id]) %>
+  <%= f.association :category %> 
+   <%= error_span(@producto[:category]) %>
 
   <%= f.button :submit, 'Crear Producto', :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

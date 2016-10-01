@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160928004455) do
   create_table "productos", force: :cascade do |t|
     t.string   "type"
     t.string   "name"
-    t.integer  "price"
+    t.decimal  "price"
     t.boolean  "available"
     t.integer  "category_id"
     t.datetime "created_at",  null: false

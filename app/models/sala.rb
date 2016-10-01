@@ -14,7 +14,7 @@
 class Sala < ActiveRecord::Base
   belongs_to :local
   
-  has_many :events, dependent: :destroy
+  #has_many :events, dependent: :destroy
 
     validates :name, presence: { message: "Campo obligatorio" }
     validates :capacity, :numericality => {:only_integer => true, :message => "Este campo debe ser numérico"}

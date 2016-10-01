@@ -4,8 +4,6 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
-  <dd><%= @producto.type %></dd>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @producto.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
@@ -13,7 +11,7 @@
   <dt><strong><%= model_class.human_attribute_name(:available) %>:</strong></dt>
   <dd><%= @producto.available %></dd>
   <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
-  <dd><%= @producto.category_id %></dd>
+  <td><%= @producto.category_name %></td>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -16,9 +16,9 @@
     <% @productos.each do |producto| %>
       <tr>
         <td><%= producto.name %></td>        
-        <td><%= producto.category_id %></td>
+        <td><%= producto.category_name %></td>
         <td><%= producto.price %></td>
-        <td><%= producto.available %></td>
+        <dd><%= producto.available %></dd>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_producto_path(producto), :class => 'btn btn-default btn-xs' %>

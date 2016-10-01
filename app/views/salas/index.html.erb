@@ -10,7 +10,6 @@
       <th><%= model_class.human_attribute_name(:capacity) %></th>
       <th><%= model_class.human_attribute_name(:about) %></th>
       <th><%= model_class.human_attribute_name(:local_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -21,8 +20,7 @@
         <td><%= sala.name %></td>
         <td><%= sala.capacity %></td>
         <td><%= sala.about %></td>
-        <td><%= sala.local_id %></td>
-        <td><%=l sala.created_at %></td>
+        <td><%= sala.local.name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_local_sala_path(@local, sala), :class => 'btn btn-default btn-xs' %>
