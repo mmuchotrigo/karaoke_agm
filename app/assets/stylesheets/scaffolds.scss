@@ -1,6 +1,6 @@
 body {
-  background-color: #FFF;
-  color: #16264c;
+  background-color: #fff;
+  color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -26,14 +26,13 @@ a {
   }
 
   &:hover {
-    color: #264eab;
-    background-color: #264eab;
+    color: #fff;
+    background-color: #000;
   }
 }
 
 div {
   &.field, &.actions {
-    background-color: #264eab;
     margin-bottom: 10px;
   }
 }
@@ -63,8 +62,8 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c44;
-    color: #343;
+    background-color: #c00;
+    color: #fff;
   }
 
   ul li {

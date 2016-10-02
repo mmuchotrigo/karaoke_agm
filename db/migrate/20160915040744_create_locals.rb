@@ -6,7 +6,6 @@ class CreateLocals < ActiveRecord::Migration
       t.integer :phone
       t.string :email
       t.string :about
-      t.string :manager
 
       t.timestamps null: false
     end

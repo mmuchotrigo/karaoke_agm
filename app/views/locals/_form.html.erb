@@ -9,8 +9,6 @@
   <%= error_span(@local[:email]) %>
   <%= f.input :about %>
   <%= error_span(@local[:about]) %>
-  <%= f.input :manager %>
-  <%= error_span(@local[:manager]) %>
 
   <%= f.button :submit, 'Crear Local', :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

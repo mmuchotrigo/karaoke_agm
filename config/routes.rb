@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :usuarios
+  resources :tipo_usuarios
   resources :productos
   resources :productos
   #resources :products

@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
          
          has_one :profile
          
-  enum role: [:user, :operator, :chef, :admin]
+  enum role: [:user, :operator, :cajero, :admin]
   after_initialize :set_default_role
   def set_default_role
   self.role ||= :user
@@ -44,7 +44,7 @@ end
 
 def friendly_name
 
-    if self.default_profile.first_name.nil?
+    if self.default_profile.name.nil?
       self.email
     else
       self.profile.full_name
