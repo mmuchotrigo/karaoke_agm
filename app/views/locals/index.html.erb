@@ -7,10 +7,10 @@
     <tr>
       <th>Nombre</th>
       <th>Dirección</th>
-      <th>Teléfono</th>
-      <th>Correo Electrónico</th>
+      <th>Telefono</th>
+      <th>Email</th>
       <th>Descripción</th>
-      <th>Administrador</th>
+      <th>Manager</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -21,7 +21,8 @@
         <td><%= local.address %></td>
         <td><%= local.phone %></td>
         <td><%= local.email %></td>
-        <td><%= local.about %></td>
+        <td><%= local.description %></td>
+        <td><%= local.manager_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_local_path(local), :class => 'btn btn-default btn-xs' %>

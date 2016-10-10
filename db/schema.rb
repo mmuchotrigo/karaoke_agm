@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002012828) do
+ActiveRecord::Schema.define(version: 20161008160714) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -32,11 +32,21 @@ ActiveRecord::Schema.define(version: 20161002012828) do
   create_table "locals", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "email"
-    t.string   "about"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.integer  "manager_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "locals", ["manager_id"], name: "index_locals_on_manager_id"
+
+  create_table "managers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "productos", force: :cascade do |t|
@@ -78,11 +88,11 @@ ActiveRecord::Schema.define(version: 20161002012828) do
 
   create_table "salas", force: :cascade do |t|
     t.string   "name"
-    t.integer  "capacity"
-    t.string   "about"
+    t.string   "capacity"
+    t.string   "description"
     t.integer  "local_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "salas", ["local_id"], name: "index_salas_on_local_id"

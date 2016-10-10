@@ -1,19 +1,17 @@
 # == Schema Information
 #
-# Table name: salas
+# Table name: managers
 #
 #  id          :integer          not null, primary key
 #  name        :string
-#  capacity    :string
-#  description :string
-#  local_id    :integer
+#  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 require 'test_helper'
 
-class SalaTest < ActiveSupport::TestCase
+class ManagerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

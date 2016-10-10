@@ -1,31 +1,29 @@
 <%- model_class = Sala -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Listado de Salas</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:capacity) %></th>
-      <th><%= model_class.human_attribute_name(:about) %></th>
-      <th><%= model_class.human_attribute_name(:local_id) %></th>
+      <th>Nombre</th>
+      <th>Capacidad</th>
+      <th>Descripción</th>
+      <th>Local</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @salas.each do |sala| %>
       <tr>
-        <td><%= link_to sala.id, local_salas_path %></td>
         <td><%= sala.name %></td>
         <td><%= sala.capacity %></td>
-        <td><%= sala.about %></td>
-        <td><%= sala.local.name %></td>
+        <td><%= sala.description %></td>
+        <td><%= sala.local_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_local_sala_path(@local, sala), :class => 'btn btn-default btn-xs' %>
+                      edit_sala_path(sala), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      local_sala_path(@local, sala),
+                      sala_path(sala),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -36,5 +34,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_local_sala_path(@local),
+            new_sala_path,
             :class => 'btn btn-primary' %>

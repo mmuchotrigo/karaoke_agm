@@ -7,7 +7,6 @@
 #  date_time  :datetime
 #  capacity   :integer
 #  about      :string
-#  locals_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

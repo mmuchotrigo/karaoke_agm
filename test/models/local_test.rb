@@ -2,15 +2,15 @@
 #
 # Table name: locals
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  address    :string
-#  phone      :integer
-#  email      :string
-#  about      :string
-#  manager    :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  name        :string
+#  address     :string
+#  phone       :string
+#  email       :string
+#  description :string
+#  manager_id  :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 require 'test_helper'

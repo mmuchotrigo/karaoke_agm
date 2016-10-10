@@ -7,10 +7,12 @@
   <%= error_span(@local[:phone]) %>
   <%= f.input :email %>
   <%= error_span(@local[:email]) %>
-  <%= f.input :about %>
-  <%= error_span(@local[:about]) %>
+  <%= f.input :description %>
+  <%= error_span(@local[:description]) %>
+  <%= f.association :manager %>
+  <%= error_span(@local[:manager]) %>
 
-  <%= f.button :submit, 'Crear Local', :class => 'btn-primary' %>
+  <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 locals_path, :class => 'btn btn-default' %>
 <% end %>

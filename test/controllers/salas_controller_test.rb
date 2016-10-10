@@ -18,7 +18,7 @@ class SalasControllerTest < ActionController::TestCase
 
   test "should create sala" do
     assert_difference('Sala.count') do
-      post :create, sala: { about: @sala.about, capacity: @sala.capacity, local_id: @sala.local_id, name: @sala.name }
+      post :create, sala: { capacity: @sala.capacity, description: @sala.description, local_id: @sala.local_id, name: @sala.name }
     end
 
     assert_redirected_to sala_path(assigns(:sala))
@@ -35,7 +35,7 @@ class SalasControllerTest < ActionController::TestCase
   end
 
   test "should update sala" do
-    patch :update, id: @sala, sala: { about: @sala.about, capacity: @sala.capacity, local_id: @sala.local_id, name: @sala.name }
+    patch :update, id: @sala, sala: { capacity: @sala.capacity, description: @sala.description, local_id: @sala.local_id, name: @sala.name }
     assert_redirected_to sala_path(assigns(:sala))
   end
 

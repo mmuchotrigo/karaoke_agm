@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :salas
+  resources :locals
+  resources :managers
   resources :usuarios
   resources :tipo_usuarios
   resources :productos
@@ -25,9 +28,8 @@ Rails.application.routes.draw do
   resources :productos
   resources :productos
   resources :productos
-  resources :locals do
-    resources :salas  
-end
+  resources :locals
+  resources :salas
 
   root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.

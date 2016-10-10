@@ -2,14 +2,14 @@
 #
 # Table name: productos
 #
-#  id         :integer          not null, primary key
-#  tipe       :string
-#  name       :string
-#  price      :integer
-#  available  :boolean
-#  local_id   :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  type        :string
+#  name        :string
+#  price       :decimal(, )
+#  available   :boolean
+#  category_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 require 'test_helper'

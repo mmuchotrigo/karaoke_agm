@@ -28,7 +28,7 @@ class LocalsController < ApplicationController
 
     respond_to do |format|
       if @local.save
-        format.html { redirect_to @local, notice: 'Local creado exitosamente.' }
+        format.html { redirect_to @local, notice: 'Local was successfully created.' }
         format.json { render :show, status: :created, location: @local }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class LocalsController < ApplicationController
   def update
     respond_to do |format|
       if @local.update(local_params)
-        format.html { redirect_to @local, notice: 'El Local ha sido actualizado.' }
+        format.html { redirect_to @local, notice: 'Local was successfully updated.' }
         format.json { render :show, status: :ok, location: @local }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class LocalsController < ApplicationController
   def destroy
     @local.destroy
     respond_to do |format|
-      format.html { redirect_to locals_url, notice: 'Local eliminado.' }
+      format.html { redirect_to locals_url, notice: 'Local was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class LocalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def local_params
-      params.require(:local).permit(:name, :address, :phone, :email, :about)
+      params.require(:local).permit(:name, :address, :phone, :email, :description, :manager_id)
     end
 end

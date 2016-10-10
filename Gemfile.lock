@@ -74,6 +74,8 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
+    humanize_boolean (0.0.2)
+      i18n
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -224,6 +226,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-bootstrap-views
+  humanize_boolean
   jbuilder (~> 2.0)
   jquery-rails
   less-rails

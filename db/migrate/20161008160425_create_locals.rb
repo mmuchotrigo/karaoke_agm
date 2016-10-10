@@ -3,9 +3,10 @@ class CreateLocals < ActiveRecord::Migration
     create_table :locals do |t|
       t.string :name
       t.string :address
-      t.integer :phone
+      t.string :phone
       t.string :email
-      t.string :about
+      t.string :description
+      t.references :manager, index: true, foreign_key: true
 
       t.timestamps null: false
     end

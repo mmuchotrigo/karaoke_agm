@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'mysql2', '~> 0.3.20'
 
+gem 'humanize_boolean'
+
 gem 'annotate', '~> 2.7', '>= 2.7.1'
 
 gem 'responders', '~> 2.0'

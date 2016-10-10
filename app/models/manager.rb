@@ -1,18 +1,15 @@
 # == Schema Information
 #
-# Table name: tipo_usuarios
+# Table name: managers
 #
 #  id          :integer          not null, primary key
 #  name        :string
-#  descripcion :string
+#  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  tipo: MyString
-
-two:
-  tipo: MyString
+class Manager < ActiveRecord::Base
+    has_many :locals
+    has_many :salas, through: :locals
+end
