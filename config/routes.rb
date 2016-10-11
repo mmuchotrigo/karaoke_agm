@@ -1,12 +1,38 @@
 Rails.application.routes.draw do
-  resources :productos
-  resources :productos
-  resources :productos
-  resources :locals do
-    resources :salas  
-end
 
-  root 'locals#index'
+  #devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :salas
+  resources :locals
+  resources :managers
+  resources :usuarios
+  resources :tipo_usuarios
+  resources :productos
+  resources :productos
+  #resources :products
+  resources :categories
+  resources :reservations
+  resources :clients
+  resources :events
+  resources :profiles, only: [:edit, :update]
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  get 'pages/index'
+
+  get 'pages/services'
+
+  get 'pages/reservation'
+
+  get 'pages/contact_us'
+
+  get 'pages/register'
+
+  resources :productos
+  resources :productos
+  resources :productos
+  resources :locals
+  resources :salas
+
+  root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

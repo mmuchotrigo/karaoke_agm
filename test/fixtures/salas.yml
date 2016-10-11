@@ -2,25 +2,25 @@
 #
 # Table name: salas
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  capacity   :integer
-#  about      :string
-#  local_id   :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  name        :string
+#  capacity    :string
+#  description :string
+#  local_id    :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   name: MyString
-  capacity: 1
-  about: MyString
+  capacity: MyString
+  description: MyString
   local_id: 
 
 two:
   name: MyString
-  capacity: 1
-  about: MyString
+  capacity: MyString
+  description: MyString
   local_id: 

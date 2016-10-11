@@ -1,29 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Producto -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Tipe:</strong>
-  <%= @producto.tipe %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @producto.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @producto.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:available) %>:</strong></dt>
+  <dd><%= @producto.available %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
+  <td><%= @producto.category_name %></td>
+</dl>
 
-<p>
-  <strong>Name:</strong>
-  <%= @producto.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @producto.price %>
-</p>
-
-<p>
-  <strong>Available:</strong>
-  <%= @producto.available %>
-</p>
-
-<p>
-  <strong>Local:</strong>
-  <%= @producto.local %>
-</p>
-
-<%= link_to 'Edit', edit_producto_path(@producto) %> |
-<%= link_to 'Back', productos_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              productos_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_producto_path(@producto), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              producto_path(@producto),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

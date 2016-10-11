@@ -1,28 +1,20 @@
 class SalasController < ApplicationController
   before_action :set_sala, only: [:show, :edit, :update, :destroy]
-  before_action :set_local
 
-  respond_to :html
-  
   # GET /salas
   # GET /salas.json
   def index
-    #@salas = Sala.all
-    @salas = @local.salas
-    respond_with(@local, @salas)
+    @salas = Sala.all
   end
 
   # GET /salas/1
   # GET /salas/1.json
   def show
-    respond_with(@local, @sala)
   end
 
   # GET /salas/new
   def new
-    #@sala = Sala.new
-    @sala = @local.salas.new
-    respond_with(@local, @sala)
+    @sala = Sala.new
   end
 
   # GET /salas/1/edit
@@ -32,23 +24,41 @@ class SalasController < ApplicationController
   # POST /salas
   # POST /salas.json
   def create
-    @sala = @local.salas.new(sala_params)
-    @sala.save
-    respond_with(@local, @sala)
+    @sala = Sala.new(sala_params)
+
+    respond_to do |format|
+      if @sala.save
+        format.html { redirect_to @sala, notice: 'Sala was successfully created.' }
+        format.json { render :show, status: :created, location: @sala }
+      else
+        format.html { render :new }
+        format.json { render json: @sala.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /salas/1
   # PATCH/PUT /salas/1.json
   def update
-   @sala.update(sala_params)
-   respond_with(@local)
+    respond_to do |format|
+      if @sala.update(sala_params)
+        format.html { redirect_to @sala, notice: 'Sala was successfully updated.' }
+        format.json { render :show, status: :ok, location: @sala }
+      else
+        format.html { render :edit }
+        format.json { render json: @sala.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /salas/1
   # DELETE /salas/1.json
   def destroy
     @sala.destroy
-    respond_with(@local)
+    respond_to do |format|
+      format.html { redirect_to salas_url, notice: 'Sala was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -56,12 +66,9 @@ class SalasController < ApplicationController
     def set_sala
       @sala = Sala.find(params[:id])
     end
-    def set_local
-      @local = Local.find(params[:local_id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sala_params
-      params.require(:sala).permit(:name, :capacity, :about, :local_id)
+      params.require(:sala).permit(:name, :capacity, :description, :local_id)
     end
 end

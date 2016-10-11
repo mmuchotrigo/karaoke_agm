@@ -1,41 +1,18 @@
-<%= form_for(@local) do |f| %> 
-  <% if @local.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@local.errors.count, "error") %> prohibited this local from being saved:</h2>
+<%= simple_form_for @local, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name, autofocus: true %>
+  <%= error_span(@local[:name]) %>
+  <%= f.input :address %>
+  <%= error_span(@local[:address]) %>
+  <%= f.input :phone %>
+  <%= error_span(@local[:phone]) %>
+  <%= f.input :email %>
+  <%= error_span(@local[:email]) %>
+  <%= f.input :description %>
+  <%= error_span(@local[:description]) %>
+  <%= f.association :manager %>
+  <%= error_span(@local[:manager]) %>
 
-      <ul>
-      <% @local.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.number_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :about %><br>
-    <%= f.text_field :about %>
-  </div>
-  <div class="field">
-    <%= f.label :manager %><br>
-    <%= f.text_field :manager %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                locals_path, :class => 'btn btn-default' %>
 <% end %>

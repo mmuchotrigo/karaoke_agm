@@ -15,17 +15,41 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'mysql2', '~> 0.3.20'
 
+gem 'humanize_boolean'
+
 gem 'annotate', '~> 2.7', '>= 2.7.1'
 
 gem 'responders', '~> 2.0'
 
-gem 'therubyracer'
+#gem 'therubyracer'
 
-gem 'less-rails'
+#gem 'less-rails'
 
-gem 'twitter-bootstrap-rails'
+#gem 'twitter-bootstrap-rails'
 
 gem 'client_side_validations'
+
+# Simplified Form Management
+
+#gem 'simple_form'
+
+# Authentication Support
+
+gem 'devise'
+
+gem 'devise-bootstrap-views'
+
+# Admin Section Support
+
+gem 'rails_admin'
+
+# Bootstrap Frontend Framework Support
+  gem 'therubyracer'
+  gem 'less-rails'
+  gem 'twitter-bootstrap-rails', '>= 3.2.0', '< 3.2.2'
+  
+  # Simplified Form Management Support
+  gem 'simple_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,35 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Productos</h1>
-
-<table>
+<%- model_class = Producto -%>
+<div class="page-header">
+  <h1>Listado de Productos</h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Tipe</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Available</th>
-      <th>Local</th>
-      <th colspan="3"></th>
+      <th>Nombre</th>
+      <th>Categoría</th>
+      <th>Precio (S/.)</th>
+      <th>Disponibilidad</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @productos.each do |producto| %>
       <tr>
-        <td><%= producto.tipe %></td>
-        <td><%= producto.name %></td>
+        <td><%= producto.name %></td>        
+        <td><%= producto.category_name %></td>
         <td><%= producto.price %></td>
-        <td><%= producto.available %></td>
-        <td><%= producto.local %></td>
-        <td><%= link_to 'Show', producto %></td>
-        <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
-        <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= humanize_boolean(producto.available?) %></dd>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_producto_path(producto), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      producto_path(producto),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Producto', new_producto_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_producto_path,
+            :class => 'btn btn-primary' %>

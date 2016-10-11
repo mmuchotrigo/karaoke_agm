@@ -1,15 +1,29 @@
+# == Schema Information
+#
+# Table name: productos
+#
+#  id          :integer          not null, primary key
+#  type        :string
+#  name        :string
+#  price       :decimal(, )
+#  available   :boolean
+#  category_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tipe: MyString
+  type: 
   name: MyString
   price: 1
   available: false
-  local_id: 
+  category_id: 
 
 two:
-  tipe: MyString
+  type: 
   name: MyString
   price: 1
   available: false
-  local_id: 
+  category_id: 

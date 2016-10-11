@@ -2,13 +2,13 @@
 #
 # Table name: salas
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  capacity   :integer
-#  about      :string
-#  local_id   :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  name        :string
+#  capacity    :string
+#  description :string
+#  local_id    :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 require 'test_helper'
