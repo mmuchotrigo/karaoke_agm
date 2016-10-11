@@ -25,7 +25,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
          has_one :profile
-         
+  
+  validates_uniqueness_of :dni, :email
+  
   enum role: [:user, :operator, :cajero, :admin]
   after_initialize :set_default_role
   def set_default_role

@@ -12,4 +12,6 @@
 class Manager < ActiveRecord::Base
     has_many :locals
     has_many :salas, through: :locals
+    
+    validates :name, :description, presence: { message: "Campo obligatorio" }
 end

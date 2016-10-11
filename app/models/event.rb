@@ -12,5 +12,8 @@
 #
 
 class Event < ActiveRecord::Base
-  belongs_to :salas
+  
+  validates :capacity, :numericality => {greater_than_or_equal_to: 0, lower_than_or_equal_to: 100, :message => "Este campo debe ser numérico"}
+  validates :name, :about, :date_time, presence: { message: "Campo obligatorio" }
+  
 end

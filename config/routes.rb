@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  #devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :salas
   resources :locals
   resources :managers
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
   resources :events
   resources :profiles, only: [:edit, :update]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
   get 'pages/index'
 
   get 'pages/services'
