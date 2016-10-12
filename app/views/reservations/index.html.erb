@@ -5,22 +5,20 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Sala</th>
-      <th>Cliente</th>
       <th>Fecha y Hora</th>
       <th>Descripción</th>
+      <th>Sala</th>
+      <th>Usuario</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= link_to reservation.id, reservation_path(reservation) %></td>
-        <td><%= reservation.salas_id %></td>
-        <td><%= reservation.clients_id %></td>
-        <td><%= reservation.date_time %></td>
-        <td><%= reservation.about %></td>
-        <td><%=l reservation.created_at %></td>
+        <td><%= reservation.reserved_at %></td>
+        <td><%= reservation.description %></td>
+        <td><%= reservation.sala_name %></td>
+        <td><%= reservation.user_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_reservation_path(reservation), :class => 'btn btn-default btn-xs' %>

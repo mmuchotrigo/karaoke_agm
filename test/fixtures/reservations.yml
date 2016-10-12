@@ -2,25 +2,25 @@
 #
 # Table name: reservations
 #
-#  id         :integer          not null, primary key
-#  salas_id   :integer
-#  clients_id :integer
-#  date_time  :datetime
-#  about      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  reserved_at :datetime
+#  description :string
+#  sala_id     :integer
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  salas_id: 
-  clients_id: 
-  date_time: 2016-09-26 23:29:40
-  about: MyString
+  reserved_at: 2016-10-12 01:48:23
+  description: MyString
+  sala_id: 
+  user_id: 
 
 two:
-  salas_id: 
-  clients_id: 
-  date_time: 2016-09-26 23:29:40
-  about: MyString
+  reserved_at: 2016-10-12 01:48:23
+  description: MyString
+  sala_id: 
+  user_id: 

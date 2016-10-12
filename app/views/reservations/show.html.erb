@@ -4,14 +4,14 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:salas_id) %>:</strong></dt>
-  <dd><%= @reservation.salas_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:clients_id) %>:</strong></dt>
-  <dd><%= @reservation.clients_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date_time) %>:</strong></dt>
-  <dd><%= @reservation.date_time %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:about) %>:</strong></dt>
-  <dd><%= @reservation.about %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reserved_at) %>:</strong></dt>
+  <dd><%= @reservation.reserved_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @reservation.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sala_id) %>:</strong></dt>
+  <dd><%= @reservation.sala_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @reservation.user_id %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

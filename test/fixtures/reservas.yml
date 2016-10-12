@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reserved_at: 2016-10-12 03:32:24
+  local_id: 
+  sala_id: 
+  description: MyString
+
+two:
+  reserved_at: 2016-10-12 03:32:24
+  local_id: 
+  sala_id: 
+  description: MyString

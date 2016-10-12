@@ -1,19 +1,17 @@
 # == Schema Information
 #
-# Table name: reservations
+# Table name: pedidos
 #
 #  id          :integer          not null, primary key
-#  reserved_at :datetime
-#  description :string
-#  sala_id     :integer
-#  user_id     :integer
+#  producto_id :integer
+#  cantidad    :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 require 'test_helper'
 
-class ReservationTest < ActiveSupport::TestCase
+class PedidoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
