@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
+
   # GET /reservations
   # GET /reservations.json
   def index
@@ -69,6 +70,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:salas_id, :clients_id, :date_time, :about)
+      params.require(:reservation).permit(:reserved_at, :description, :sala_id, :user_id)
     end
 end

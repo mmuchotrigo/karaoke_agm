@@ -1,0 +1,10 @@
+<%= simple_form_for @pedido, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :producto, :label => "Producto" %>
+  <%= error_span(@pedido[:producto]) %>
+  <%= f.input :cantidad, :label => "Cantidad" %>
+  <%= error_span(@pedido[:cantidad]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                pedidos_path, :class => 'btn btn-default' %>
+<% end %>

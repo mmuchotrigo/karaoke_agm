@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010030729) do
+ActiveRecord::Schema.define(version: 20161012033224) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20161010030729) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "pedidos", force: :cascade do |t|
+    t.integer  "producto_id"
+    t.string   "cantidad"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "pedidos", ["producto_id"], name: "index_pedidos_on_producto_id"
+
   create_table "productos", force: :cascade do |t|
     t.string   "type"
     t.string   "name"
@@ -74,17 +83,29 @@ ActiveRecord::Schema.define(version: 20161010030729) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
-  create_table "reservations", force: :cascade do |t|
-    t.integer  "salas_id"
-    t.integer  "clients_id"
-    t.datetime "date_time"
-    t.string   "about"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "reservas", force: :cascade do |t|
+    t.datetime "reserved_at"
+    t.integer  "local_id"
+    t.integer  "sala_id"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "reservations", ["clients_id"], name: "index_reservations_on_clients_id"
-  add_index "reservations", ["salas_id"], name: "index_reservations_on_salas_id"
+  add_index "reservas", ["local_id"], name: "index_reservas_on_local_id"
+  add_index "reservas", ["sala_id"], name: "index_reservas_on_sala_id"
+
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "reserved_at"
+    t.string   "description"
+    t.integer  "sala_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reservations", ["sala_id"], name: "index_reservations_on_sala_id"
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
 
   create_table "salas", force: :cascade do |t|
     t.string   "name"
@@ -96,13 +117,6 @@ ActiveRecord::Schema.define(version: 20161010030729) do
   end
 
   add_index "salas", ["local_id"], name: "index_salas_on_local_id"
-
-  create_table "tipo_usuarios", force: :cascade do |t|
-    t.string   "name"
-    t.string   "descripcion"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -127,15 +141,5 @@ ActiveRecord::Schema.define(version: 20161010030729) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "usuarios", force: :cascade do |t|
-    t.string   "name"
-    t.string   "last_name"
-    t.integer  "tipo_usuario_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "usuarios", ["tipo_usuario_id"], name: "index_usuarios_on_tipo_usuario_id"
 
 end

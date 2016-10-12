@@ -21,7 +21,7 @@ class Local < ActiveRecord::Base
   end
   validates :name, presence: { message: "Campo obligatorio" }
   validates :name, :address, :email, :description, presence: { message: "Campo obligatorio" }
-  validates :phone, :numericality => {:only_integer => true, :message => "Este campo debe ser numérico"}
+  validates :phone, :numericality => {:only_integer => true, :message => "Este campo debe ser numérico"}, presence: { message: "Campo obligatorio" }
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message => "Formato incorrecto de correo electrónico"}
   validates :manager, presence: true
 end

@@ -16,6 +16,11 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  role                   :integer
+#  name                   :string
+#  ap_paterno             :string
+#  ap_materno             :string
+#  dni                    :string
+#  phone                  :string
 #
 
 require 'test_helper'

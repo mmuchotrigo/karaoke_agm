@@ -51,7 +51,7 @@
           <ul class="nav navbar-nav">
            <li><%= link_to "Locales", locals_path  %></li>
            <li><%= link_to "Salas", salas_path  %></li>
-           <li><%= link_to "Managers", managers_path  %></li>
+           <li><%= link_to "Administradores", managers_path  %></li>
            <li><%= link_to "Categorias", categories_path  %></li>
            <li><%= link_to "Productos", productos_path  %></li>
            <li><%= link_to "Eventos", events_path  %></li>
@@ -69,16 +69,11 @@
         </div>
         <div class="col-lg-3">
           <div class="well sidebar-nav">
-            <h3>Menu</h3>
+            <h3>Menú Clientes</h3>
             <ul class="nav nav-list">
-              <li class="nav-header">ADMINISTRAR</li>
-           <li><%= link_to "Locales", locals_path  %></li>
-           <li><%= link_to "Salas", salas_path  %></li>
-           <li><%= link_to "Managers", managers_path  %></li>
-           <li><%= link_to "Categorias", categories_path  %></li>
-           <li><%= link_to "Productos", productos_path  %></li>
-           <li><%= link_to "Eventos", events_path  %></li>
-           <li><%= link_to "Reservaciones", reservations_path  %></li>
+              <li><%= link_to "Reservas", reservas_path  %></li>
+              <li><%= link_to "Pedido de Canciones"  %></li>
+              <li><%= link_to "Pedido de Productos", pedidos_path  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

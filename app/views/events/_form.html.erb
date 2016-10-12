@@ -1,11 +1,11 @@
 <%= simple_form_for @event, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, :label => "Nombre" %>
   <%= error_span(@event[:name]) %>
-  <%= f.input :date_time %>
+  <%= f.input :date_time, :label => "Fecha y Hora" %>
   <%= error_span(@event[:date_time]) %>
-  <%= f.input :capacity %>
+  <%= f.input :capacity, :label => "Capacidad" %>
   <%= error_span(@event[:capacity]) %>
-  <%= f.input :about %>
+  <%= f.input :about, :label => "Descripción" %>
   <%= error_span(@event[:about]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>

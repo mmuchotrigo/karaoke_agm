@@ -1,15 +1,15 @@
 <%= simple_form_for @local, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name, autofocus: true %>
+  <%= f.input :name, :label => "Nombre", autofocus: true %>
   <%= error_span(@local[:name]) %>
-  <%= f.input :address %>
+  <%= f.input :address, :label => "Dirección" %>
   <%= error_span(@local[:address]) %>
-  <%= f.input :phone %>
+  <%= f.input :phone , :label => "Teléfono de Reserva" %>
   <%= error_span(@local[:phone]) %>
-  <%= f.input :email %>
+  <%= f.input :email , :label => "Correo electrónico" %>
   <%= error_span(@local[:email]) %>
-  <%= f.input :description %>
+  <%= f.input :description , :label => "Descripción general" %>
   <%= error_span(@local[:description]) %>
-  <%= f.association :manager %>
+  <%= f.association :manager , :label => "Administrador" %>
   <%= error_span(@local[:manager]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
